@@ -1,4 +1,3 @@
-```js
 import React, { useState, useEffect } from "react";
 import PreviewQuestion from "./PreviewQuestion";
 import { useParams } from "react-router-dom";
@@ -127,4 +126,3 @@ const TestPreview = () => {
 };
 
 export default TestPreview;
-```
