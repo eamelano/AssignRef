@@ -1,4 +1,4 @@
-![Results Table](https://github.com/eamelano/AssignRef/blob/main/react/assets/images/filename.jpg)
+![Results Table](https://github.com/eamelano/AssignRef/blob/main/react/assets/images/testResultsTable.jpg)
 
 import React from "react";
 import * as Feather from "react-feather";
