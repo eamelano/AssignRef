@@ -1,16 +1,3 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Sabio.Models;
-using Sabio.Models.Domain.TestInstances;
-using Sabio.Models.Requests.TestInstances;
-using Sabio.Services;
-using Sabio.Services.Interfaces;
-using Sabio.Web.Controllers;
-using Sabio.Web.Models.Responses;
-using System;
-
-namespace Sabio.Web.Api.Controllers
-{
     [Route("api/tests/results")]
     [ApiController]
     public class TestInstancesApiController : BaseApiController
@@ -222,4 +209,3 @@ namespace Sabio.Web.Api.Controllers
         }
 
     }
-}
