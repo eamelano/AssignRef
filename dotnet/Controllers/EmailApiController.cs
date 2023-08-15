@@ -1,14 +1,3 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Sabio.Models.Domain.Emails;
-using Sabio.Services;
-using Sabio.Services.Interfaces;
-using Sabio.Web.Controllers;
-using Sabio.Web.Models.Responses;
-using System;
-
-namespace Sabio.Web.Api.Controllers
-{
     [Route("api/emails")]
     [ApiController]
     public class EmailApiController : BaseApiController
@@ -62,5 +51,3 @@ namespace Sabio.Web.Api.Controllers
             return StatusCode(code, response);
         }
     }
-
-}
