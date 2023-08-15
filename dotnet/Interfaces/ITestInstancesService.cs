@@ -1,12 +1,3 @@
-﻿using Sabio.Models;
-using Sabio.Models.Domain.TestInstances;
-using Sabio.Models.Requests.TestAnswers;
-using Sabio.Models.Requests.TestInstances;
-using System;
-using System.Collections.Generic;
-
-namespace Sabio.Services.Interfaces
-{
     public interface ITestInstancesService
     {
         int Add(TestInstanceAddRequest model, int userId);
@@ -18,4 +9,3 @@ namespace Sabio.Services.Interfaces
         void Update(TestInstanceUpdateRequest model, int id, int userId);
         Paged<TestInstanceAnswerCount> Search(int pageIndex, int pageSize, string query, DateTime startDate, DateTime endDate);
     }
-}
