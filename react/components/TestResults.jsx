@@ -14,10 +14,7 @@ import testService from "services/testService";
 import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css";
 import locale from "rc-pagination/lib/locale/en_US";
-import debug from "assignref-debug";
 import TitleHeader from "components/general/TitleHeader";
-
-const _logger = debug.extend("Test");
 
 const TestResults = () => {
   //#region State | UseEffect
@@ -118,7 +115,7 @@ const TestResults = () => {
   };
 
   const onGetTestError = (error) => {
-    _logger(error);
+    console.log(error);
   };
 
   //#endregion
