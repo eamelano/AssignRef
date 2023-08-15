@@ -1,17 +1,3 @@
-using AssignRef.Data.Providers;
-using AssignRef.Models.Requests.TestInstances;
-using AssignRef.Services.Interfaces;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using AssignRef.Models.Domain.TestInstances;
-using AssignRef.Models;
-using AssignRef.Data;
-using System;
-using AssignRef.Models.Requests.TestAnswers;
-
-namespace AssignRef.Services
-{
     public class TestInstanceService : ITestInstancesService
     {
         IBaseUserMapper _userMapper = null;
@@ -320,4 +306,3 @@ namespace AssignRef.Services
         }
 
     }
-}
