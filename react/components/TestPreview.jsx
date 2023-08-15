@@ -4,10 +4,7 @@ import { useParams } from "react-router-dom";
 import testService from "services/testService";
 import { Button, Row } from "react-bootstrap";
 import { Formik, Form, FieldArray } from "formik";
-import debug from "sabio-debug";
 import TitleHeader from "components/general/TitleHeader";
-
-const _logger = debug.extend("TestForm");
 
 const TestPreview = () => {
   //#region Hooks | Variables
@@ -73,11 +70,11 @@ const TestPreview = () => {
   };
 
   const onCreateSuccess = (response) => {
-    _logger(response);
+    console.log(response);
   };
 
   const onCreateError = (error) => {
-    _logger(error);
+    console.log(error);
   };
 
   const onGetSuccess = (response) => {
@@ -90,7 +87,7 @@ const TestPreview = () => {
   };
 
   const onError = (e) => {
-    _logger(e);
+    console.log(e);
   };
 
   //#endregion
