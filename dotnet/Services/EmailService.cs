@@ -1,20 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using Sabio.Models.AppSettings;
-using Sabio.Models.Domain;
-using Sabio.Models.Domain.Emails;
-using Sabio.Services.Interfaces;
-using sib_api_v3_sdk.Api;
-using sib_api_v3_sdk.Client;
-using sib_api_v3_sdk.Model;
-using System.Collections.Generic;
-using System.IO;
-using Task = System.Threading.Tasks.Task;
-
-namespace Sabio.Services
-{
-    public class EmailService : IEmailService
+public class EmailService : IEmailService
     {
 
         private readonly AppKeys _appKeys;
@@ -143,4 +127,3 @@ namespace Sabio.Services
 
         }
     }
-}
