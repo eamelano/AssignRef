@@ -1,10 +1,4 @@
-﻿using Sabio.Models.Domain.Tests;
-using System;
-using System.Collections.Generic;
-
-namespace Sabio.Models.Domain.TestInstances
-{
-    public class TestInstanceDetailed
+public class TestInstanceDetailed
     {
         public int Id { get; set; }
         public DateTime DateCreated { get; set; }
@@ -15,4 +9,3 @@ namespace Sabio.Models.Domain.TestInstances
         public List<TestQuestionDetailed> Questions { get; set; }
 
     }
-}
