@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sabio.Models.Domain.TestInstances
-{
-    public class TestQuestionDetailed
+public class TestQuestionDetailed
     {
         public int Id { get; set; }
         public int TypeId { get; set; }
@@ -23,4 +15,3 @@ namespace Sabio.Models.Domain.TestInstances
         public List<InstanceAnswer> Answer { get; set; }
 
     }
-}
