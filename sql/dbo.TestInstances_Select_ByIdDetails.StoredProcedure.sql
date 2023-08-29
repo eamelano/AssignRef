@@ -1,5 +1,4 @@
 GO
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,19 +14,18 @@ GO
 -- Code Reviewer:
 -- Note:
 -- =============================================
-
 CREATE PROC [dbo].[TestInstances_Select_ByIdDetails]
 	@Id int
 
 as
 
 /*
-	
-	DECLARE	@Id int = 30
+	DECLARE	
+		@Id int = 30
 
-	EXECUTE dbo.TestInstances_Select_ByIdDetails
+	EXECUTE 
+		dbo.TestInstances_Select_ByIdDetails
 			@Id
-
 */
 
 BEGIN
@@ -53,7 +51,7 @@ BEGIN
 		,st2.[Name] as TestStatus
 		,tt.[Id] as [TestTypeId]
 		,tt.[Name] as [TestTypeName]
-		,questions = 
+		,Questions = 
 			(
 			SELECT DISTINCT	
 				tq.[Id]
@@ -93,7 +91,8 @@ BEGIN
 								,tqaos.[Text]
 								,tqaos.[Value]
 								,ta.Answer
-							FROM	dbo.TestQuestionAnswerOptions AS tqaos
+							FROM	
+								dbo.TestQuestionAnswerOptions AS tqaos
 									inner join dbo.TestAnswers AS ta
 										ON tqaos.Id = ta.AnswerOptionId
 							WHERE	
