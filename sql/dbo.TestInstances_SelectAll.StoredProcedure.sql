@@ -1,4 +1,3 @@
-﻿USE [AssignRef]
 GO
 
 SET ANSI_NULLS ON
@@ -36,24 +35,28 @@ BEGIN
 
 	DECLARE @Offset int = @PageIndex * @PageSize
 
-	SELECT	ti.[Id] as instanceId
-			,t.[Id] as testId
-			,t.[Name] as testName
-			,tt.[Id] as testTypeId
-			,tt.[Name] as testTypeName
-			,u.[Id]
-			,u.[FirstName]
-			,u.[LastName]
-			,u.[Email]
-			,u.[AvatarUrl]
-			,TotalCount = COUNT(1) OVER()
-	FROM	dbo.TestInstances as ti	inner join dbo.Tests as t
+	SELECT	
+		ti.[Id] as instanceId
+		,t.[Id] as testId
+		,t.[Name] as testName
+		,tt.[Id] as testTypeId
+		,tt.[Name] as testTypeName
+		,u.[Id]
+		,u.[FirstName]
+		,u.[LastName]
+		,u.[Email]
+		,u.[AvatarUrl]
+		,TotalCount = COUNT(1) OVER()
+	FROM	
+		dbo.TestInstances as ti	
+			inner join dbo.Tests as t
 				ON	ti.TestId = t.Id 
 			inner join	dbo.TestTypes as tt
 				ON	t.TestTypeId = tt.Id 
 			inner join Dbo.Users as u
 				ON ti.UserId = u.Id
-	ORDER BY	ti.UserId
+	ORDER BY	
+		ti.UserId
 
 	OFFSET	@Offset ROWS
 	FETCH NEXT @PageSize ROWS ONLY
