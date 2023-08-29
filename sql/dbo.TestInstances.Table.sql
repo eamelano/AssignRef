@@ -1,4 +1,3 @@
-﻿USE [AssignRef]
 GO
 
 SET ANSI_NULLS ON
