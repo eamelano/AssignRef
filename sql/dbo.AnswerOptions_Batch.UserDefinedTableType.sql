@@ -1,5 +1,4 @@
 GO
-
 CREATE 
 	TYPE [dbo].[AnswerOptions_Batch] AS TABLE
 		(
