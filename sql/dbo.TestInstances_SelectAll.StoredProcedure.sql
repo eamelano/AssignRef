@@ -1,5 +1,4 @@
 GO
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +14,6 @@ GO
 -- Code Reviewer:
 -- Note:
 -- =============================================
-
 CREATE PROC	[dbo].[TestInstances_SelectAll]
 	@PageIndex int
 	,@PageSize int
@@ -23,12 +21,14 @@ CREATE PROC	[dbo].[TestInstances_SelectAll]
 as
 
 /*
-		DECLARE	@PageIndex int = 0
-				,@PageSize int = 30
+	DECLARE	
+		@PageIndex int = 0
+		,@PageSize int = 30
 
-		EXECUTE dbo.TestInstances_SelectAll
-				@PageIndex
-				,@PageSize
+	EXECUTE 
+		dbo.TestInstances_SelectAll
+			@PageIndex
+			,@PageSize
 */
 
 BEGIN
@@ -50,9 +50,9 @@ BEGIN
 	FROM	
 		dbo.TestInstances as ti	
 			inner join dbo.Tests as t
-				ON	ti.TestId = t.Id 
-			inner join	dbo.TestTypes as tt
-				ON	t.TestTypeId = tt.Id 
+				ON ti.TestId = t.Id 
+			inner join dbo.TestTypes as tt
+				ON t.TestTypeId = tt.Id 
 			inner join Dbo.Users as u
 				ON ti.UserId = u.Id
 	ORDER BY	
