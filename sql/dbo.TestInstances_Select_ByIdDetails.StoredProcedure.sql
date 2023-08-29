@@ -1,4 +1,3 @@
-﻿USE [AssignRef]
 GO
 
 SET ANSI_NULLS ON
@@ -76,8 +75,10 @@ BEGIN
 						,tqa.[Text]
 						,tqa.[Value]
 						,tqa.[AdditionalInfo]
-					FROM	dbo.TestQuestionAnswerOptions AS tqa
-					WHERE	tqa.QuestionId = tq.Id
+					FROM	
+						dbo.TestQuestionAnswerOptions AS tqa
+					WHERE	
+						tqa.QuestionId = tq.Id
 					FOR JSON PATH
 					)
 				,Answers =	
@@ -95,21 +96,26 @@ BEGIN
 							FROM	dbo.TestQuestionAnswerOptions AS tqaos
 									inner join dbo.TestAnswers AS ta
 										ON tqaos.Id = ta.AnswerOptionId
-							WHERE	tqaos.[QuestionId] = tq.Id
+							WHERE	
+								tqaos.[QuestionId] = tq.Id
 							FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
 							)) AS [AnswerOption]
-					FROM		dbo.TestAnswers ta
+					FROM		
+						dbo.TestAnswers ta
 					inner join dbo.TestQuestionAnswerOptions tqao
 						ON ta.AnswerOptionId = tqao.Id
-					WHERE	ta.QuestionId = tq.Id
+					WHERE	
+						ta.QuestionId = tq.Id
 					FOR JSON PATH
 					)
-			FROM	dbo.TestQuestions as tq 
+			FROM	
+				dbo.TestQuestions as tq 
 					inner join dbo.QuestionTypes AS qt 
 						ON tq.QuestionTypeId = qt.Id
 					inner join dbo.StatusTypes AS st 
 						ON st.Id = tq.StatusId
-			WHERE	t.Id = tq.TestId
+			WHERE	
+				t.Id = tq.TestId
 			FOR	JSON PATH
 			)
 	FROM	
