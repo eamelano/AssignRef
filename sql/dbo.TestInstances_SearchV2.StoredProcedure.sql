@@ -1,4 +1,3 @@
-﻿USE [AssignRef]
 GO
 
 SET ANSI_NULLS ON
@@ -27,11 +26,13 @@ CREATE PROC	[dbo].[TestInstances_SearchV2]
 as
 
 /*
-		DECLARE	@PageIndex int = 0
-				,@PageSize int = 30
-				,@Query nvarchar(50) = ''
+		DECLARE	
+			@PageIndex int = 0
+			,@PageSize int = 30
+			,@Query nvarchar(50) = ''
 
-		EXECUTE dbo.TestInstances_SearchV2
+		EXECUTE 
+			dbo.TestInstances_SearchV2
 				@PageIndex
 				,@PageSize
 				,@Query
@@ -76,22 +77,30 @@ BEGIN
 				ta.InstanceId = ti.Id AND tqao.IsCorrect = 1
 			)
 		,TotalCount = COUNT(1) OVER()
-	FROM	dbo.TestInstances as ti	
-			inner join dbo.Tests as t ON ti.TestId = t.Id 
-			inner join	dbo.TestTypes as tt ON t.TestTypeId = tt.Id 
-			inner join dbo.Users as u ON ti.UserId = u.Id
-			inner join dbo.StatusTypes as st ON ti.StatusId = st.Id
-	WHERE	(u.Id LIKE '%' + @Query + '%' OR 
-			u.[FirstName] LIKE '%' + @Query + '%' OR
-			u.[LastName] LIKE '%' + @Query + '%' OR
-			tt.[Name] LIKE '%' + @Query + '%' OR
-			st.[Name] LIKE '%' + @Query + '%' OR
-			@Query IS NULL) AND
-			(@StartDate IS NULL OR 
-			@EndDate IS NULL OR 
-			ti.DateCreated BETWEEN @StartDate AND @EndDate)
+	FROM	
+		dbo.TestInstances as ti	
+			inner join dbo.Tests as t 
+				ON ti.TestId = t.Id 
+			inner join	dbo.TestTypes as tt 
+				ON t.TestTypeId = tt.Id 
+			inner join dbo.Users as u 
+				ON ti.UserId = u.Id
+			inner join dbo.StatusTypes as st 
+				ON ti.StatusId = st.Id
+	WHERE	
+		(u.Id LIKE '%' + @Query + '%' OR 
+		u.[FirstName] LIKE '%' + @Query + '%' OR
+		u.[LastName] LIKE '%' + @Query + '%' OR
+		tt.[Name] LIKE '%' + @Query + '%' OR
+		st.[Name] LIKE '%' + @Query + '%' OR
+		@Query IS NULL) AND
+		(@StartDate IS NULL OR 
+		@EndDate IS NULL OR 
+		ti.DateCreated BETWEEN @StartDate AND @EndDate)
 			
-	ORDER BY	ti.UserId
+	ORDER BY	
+		ti.UserId
+	
 	OFFSET	@Offset ROWS
 	FETCH NEXT @PageSize ROWS ONLY
 
