@@ -1,4 +1,3 @@
-﻿USE [AssignRef]
 GO
 
 SET ANSI_NULLS ON
@@ -24,37 +23,49 @@ as
 
 /*
 
-	DECLARE	@Id int = 32
+	DECLARE	
+		@Id int = 32
 
-	SELECT	Id as InstanceId
+	SELECT	
+		Id as 	InstanceId
 			,TestId
 			,UserId
 			,StatusId
 			,DateModified
-	FROM	dbo.TestInstances
-	WHERE	Id = @Id
+	FROM	
+		dbo.TestInstances
+	WHERE	
+		Id = @Id
 
-	EXECUTE	dbo.TestInstances_Delete_ById
-		@Id
+	EXECUTE	
+		dbo.TestInstances_Delete_ById
+			@Id
 
-	SELECT	Id as InstanceId
+	SELECT	
+		Id as 	InstanceId
 			,TestId
 			,UserId
 			,StatusId
 			,DateModified
-	FROM	dbo.TestInstances
-	WHERE	Id = @Id
+	FROM	
+		dbo.TestInstances
+	WHERE	
+		Id = @Id
 
 */
 
 BEGIN
 
-	DECLARE	@DateNow datetime2(7) = GETUTCDATE();
+	DECLARE	
+		@DateNow datetime2(7) = GETUTCDATE();
 
-	UPDATE	dbo.TestInstances
-	SET		StatusId = 0
-			,DateModified = @DateNow
-	WHERE	Id = @Id
+	UPDATE	
+		dbo.TestInstances
+	SET
+		StatusId = 0
+		,DateModified = @DateNow
+	WHERE	
+		Id = @Id
 
 END
 GO
