@@ -1,5 +1,4 @@
 GO
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +14,6 @@ GO
 -- Code Reviewer:
 -- Note:
 -- =============================================
-
 CREATE PROC	[dbo].[TestInstances_Search]
 	@PageIndex int
 	,@PageSize int
@@ -62,7 +60,7 @@ BEGIN
 		dbo.TestInstances as ti	
 			inner join dbo.Tests as t 
 				ON ti.TestId = t.Id 
-			inner join	dbo.TestTypes as tt 
+			inner join dbo.TestTypes as tt 
 				ON t.TestTypeId = tt.Id 
 			inner join dbo.Users as u 
 				ON ti.UserId = u.Id
@@ -81,6 +79,7 @@ BEGIN
 			
 	ORDER BY	
 		ti.UserId
+	
 	OFFSET	@Offset ROWS
 	FETCH NEXT @PageSize ROWS ONLY
 
