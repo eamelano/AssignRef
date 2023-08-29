@@ -1,4 +1,4 @@
-    public class InstanceAnswer
+public class InstanceAnswer
     {
         public int Id { get; set; }
         public int QuestionId { get; set; }
