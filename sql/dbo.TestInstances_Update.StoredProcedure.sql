@@ -26,12 +26,14 @@ as
 
 /*
 
-	DECLARE	@Id int = 32
+	DECLARE	
+	 	@Id int = 32
 		,@TestId int = 11
 		,@UserId int = 8
 		,@StatusId int = 1
 
-	SELECT	Id
+	SELECT	
+	 	Id
 		,TestId
 		,UserId
 		,DateCreated
@@ -49,12 +51,13 @@ as
 			,@UserId
 			,@StatusId
 
-	SELECT	Id
-			,TestId
-			,UserId
-			,DateCreated
-			,DateModified
-			,StatusId
+	SELECT	
+	 	Id
+		,TestId
+		,UserId
+		,DateCreated
+		,DateModified
+		,StatusId
 	FROM	
 	 	dbo.TestInstances
 	WHERE	
@@ -78,6 +81,5 @@ BEGIN
 	 	Id = @Id
 
 END
-
 
 GO
