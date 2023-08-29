@@ -1,4 +1,3 @@
-﻿USE [AssignRef]
 GO
 
 SET ANSI_NULLS ON
@@ -27,40 +26,47 @@ as
 
 /*
 
-	DECLARE	@TestId int = 10
+	DECLARE	
+		@TestId int = 10
 			,@UserId int = 8
 			,@StatusId int = 1
 			,@Id int
 
-	EXECUTE	dbo.TestInstances_Insert
+	EXECUTE	
+		dbo.TestInstances_Insert
 			@TestId
 			,@UserId
 			,@StatusId
 			,@Id OUTPUT
 
-	SELECT	Id
-			,TestId
-			,UserId
-			,DateCreated
-			,DateModified
-			,StatusId
-	FROM	dbo.TestInstances
-	WHERE	Id = @Id
+	SELECT	
+		Id
+		,TestId
+		,UserId
+		,DateCreated
+		,DateModified
+		,StatusId
+	FROM	
+		dbo.TestInstances
+	WHERE	
+		Id = @Id
 
 */
 
 BEGIN
 
-	INSERT INTO	[dbo].[TestInstances]
-				([TestId]
-				,[UserId]
-				,[StatusId])
+	INSERT INTO	
+		[dbo].[TestInstances]
+			([TestId]
+			,[UserId]
+			,[StatusId])
      VALUES
 				(@TestId
 				,@UserId
 				,@StatusId)
 
-	SET	@Id = SCOPE_IDENTITY()
+	SET	
+		@Id = SCOPE_IDENTITY()
 
 END
 
