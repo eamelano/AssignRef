@@ -1,5 +1,4 @@
 GO
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -23,14 +22,12 @@ CREATE PROC [dbo].[TestInstances_Insert]
 	,@Id int OUTPUT
 
 as
-
 /*
-
 	DECLARE	
 		@TestId int = 10
-			,@UserId int = 8
-			,@StatusId int = 1
-			,@Id int
+		,@UserId int = 8
+		,@StatusId int = 1
+		,@Id int
 
 	EXECUTE	
 		dbo.TestInstances_Insert
@@ -50,9 +47,7 @@ as
 		dbo.TestInstances
 	WHERE	
 		Id = @Id
-
 */
-
 BEGIN
 
 	INSERT INTO	
@@ -60,15 +55,13 @@ BEGIN
 			([TestId]
 			,[UserId]
 			,[StatusId])
-     VALUES
-				(@TestId
-				,@UserId
-				,@StatusId)
+     	VALUES
+			(@TestId
+			,@UserId
+			,@StatusId)
 
 	SET	
-		@Id = SCOPE_IDENTITY()
+			@Id = SCOPE_IDENTITY()
 
 END
-
-
 GO
