@@ -1,4 +1,4 @@
-    public class BaseTestInstance
+public class BaseTestInstance
     {
         public int Id { get; set; }
         public DateTime DateCreated { get; set; }
