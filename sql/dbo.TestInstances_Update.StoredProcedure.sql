@@ -1,5 +1,4 @@
 ﻿GO
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +14,6 @@ GO
 -- Code Reviewer:
 -- Note:
 -- =============================================
-
 CREATE PROC [dbo].[TestInstances_Update]
 	@Id int
 	,@TestId int
@@ -25,7 +23,6 @@ CREATE PROC [dbo].[TestInstances_Update]
 as
 
 /*
-
 	DECLARE	
 	 	@Id int = 32
 		,@TestId int = 11
@@ -62,13 +59,11 @@ as
 	 	dbo.TestInstances
 	WHERE	
 	 	Id = @Id
-
 */
 
 BEGIN
 
-	DECLARE 
-	 	@DateNow datetime2(7) = GETUTCDATE()
+	DECLARE @DateNow datetime2(7) = GETUTCDATE()
 
 	UPDATE	
 	 	[dbo].[TestInstances]
@@ -81,5 +76,4 @@ BEGIN
 	 	Id = @Id
 
 END
-
 GO
