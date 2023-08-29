@@ -1,4 +1,3 @@
-﻿USE [AssignRef]
 GO
 
 CREATE TYPE [dbo].[BatchIds] AS TABLE(
