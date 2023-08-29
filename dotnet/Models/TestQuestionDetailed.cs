@@ -13,5 +13,4 @@ public class TestQuestionDetailed
         public int SortOrder { get; set; }
         public List<InstanceAnswerOption> AnswerOptions { get; set; }
         public List<InstanceAnswer> Answer { get; set; }
-
     }
