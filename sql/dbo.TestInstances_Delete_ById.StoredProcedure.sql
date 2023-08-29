@@ -1,5 +1,4 @@
 GO
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,23 +14,20 @@ GO
 -- Code Reviewer:
 -- Note:
 -- =============================================
-
 CREATE PROC [dbo].[TestInstances_Delete_ById]
 	@Id int
 
 as
-
 /*
-
 	DECLARE	
 		@Id int = 32
 
 	SELECT	
-		Id as 	InstanceId
-			,TestId
-			,UserId
-			,StatusId
-			,DateModified
+		Id as InstanceId
+		,TestId
+		,UserId
+		,StatusId
+		,DateModified
 	FROM	
 		dbo.TestInstances
 	WHERE	
@@ -42,20 +38,18 @@ as
 			@Id
 
 	SELECT	
-		Id as 	InstanceId
-			,TestId
-			,UserId
-			,StatusId
-			,DateModified
+		Id as InstanceId
+		,TestId
+		,UserId
+		,StatusId
+		,DateModified
 	FROM	
 		dbo.TestInstances
 	WHERE	
 		Id = @Id
-
 */
-
 BEGIN
-
+	
 	DECLARE	
 		@DateNow datetime2(7) = GETUTCDATE();
 
@@ -66,6 +60,6 @@ BEGIN
 		,DateModified = @DateNow
 	WHERE	
 		Id = @Id
-
+		
 END
 GO
