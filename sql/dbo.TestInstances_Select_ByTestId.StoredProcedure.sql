@@ -1,5 +1,4 @@
 GO
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +14,6 @@ GO
 -- Code Reviewer:
 -- Note:
 -- =============================================
-
 CREATE PROC [dbo].[TestInstances_Select_ByTestId]
 	@Id int
 	,@PageIndex int
@@ -24,7 +22,6 @@ CREATE PROC [dbo].[TestInstances_Select_ByTestId]
 as
 
 /*
-	
 	DECLARE 
 		@Id int = 10
 		,@PageIndex int = 0
@@ -35,7 +32,6 @@ as
 			@Id
 			,@PageIndex
 			,@PageSize
-
 */
 
 BEGIN
