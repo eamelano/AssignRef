@@ -1,4 +1,4 @@
-    public class InstanceAnswerOption
+public class InstanceAnswerOption
     {
         public int Id { get; set; }
         public int QuestionId { get; set; }
