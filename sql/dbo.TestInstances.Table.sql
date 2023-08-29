@@ -12,42 +12,44 @@ CREATE TABLE
 		[DateCreated] [datetime2](7) NOT NULL,
 		[DateModified] [datetime2](7) NOT NULL,
 		[StatusId] [int] NOT NULL,
-		CONSTRAINT [PK_TestInstances] PRIMARY KEY CLUSTERED ( [Id] ASC) 
-		WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
+		CONSTRAINT [PK_TestInstances] 
+		PRIMARY KEY CLUSTERED ( [Id] ASC) 
+			WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
 		ON [PRIMARY]
 		) ON [PRIMARY]
 GO
 ALTER TABLE 
 	[dbo].[TestInstances] 
-	ADD  CONSTRAINT 
-		[DF_TestInstances_DateCreated]  DEFAULT (getutcdate()) FOR [DateCreated]
+		ADD  CONSTRAINT 
+			[DF_TestInstances_DateCreated]  DEFAULT (getutcdate()) FOR [DateCreated]
 GO
 ALTER TABLE 
 	[dbo].[TestInstances] 
-	ADD  CONSTRAINT 
-		[DF_TestInstances_DateModified]  DEFAULT (getutcdate()) FOR [DateModified]
+		ADD  CONSTRAINT 
+			[DF_TestInstances_DateModified]  DEFAULT (getutcdate()) FOR [DateModified]
 GO
 ALTER TABLE 
 	[dbo].[TestInstances] 
-	ADD  CONSTRAINT [DF_TestInstances_StatusId]  DEFAULT ((1)) FOR [StatusId]
+		ADD  CONSTRAINT 
+			[DF_TestInstances_StatusId]  DEFAULT ((1)) FOR [StatusId]
 GO
 ALTER TABLE 
 	[dbo].[TestInstances]  WITH CHECK 
-	ADD  CONSTRAINT [FK_TestInstances_Tests] 
-	FOREIGN KEY([TestId])
-	REFERENCES [dbo].[Tests] ([Id])
+		ADD  CONSTRAINT [FK_TestInstances_Tests] 
+			FOREIGN KEY([TestId])
+			REFERENCES [dbo].[Tests] ([Id])
 GO
 ALTER TABLE 
 	[dbo].[TestInstances] 
-	CHECK CONSTRAINT [FK_TestInstances_Tests]
+		CHECK CONSTRAINT [FK_TestInstances_Tests]
 GO
 ALTER TABLE 
 	[dbo].[TestInstances]  WITH CHECK 
-	ADD  CONSTRAINT [FK_TestInstances_Users] 
-	FOREIGN KEY([UserId])
-	REFERENCES [dbo].[Users] ([Id])
+		ADD  CONSTRAINT [FK_TestInstances_Users] 
+			FOREIGN KEY([UserId])
+			REFERENCES [dbo].[Users] ([Id])
 GO
 ALTER TABLE 
 	[dbo].[TestInstances] 
-	CHECK CONSTRAINT [FK_TestInstances_Users]
+		CHECK CONSTRAINT [FK_TestInstances_Users]
 GO
