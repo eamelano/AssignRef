@@ -1,5 +1,4 @@
-﻿USE [AssignRef]
-GO
+﻿GO
 
 SET ANSI_NULLS ON
 GO
@@ -28,20 +27,23 @@ as
 /*
 
 	DECLARE	@Id int = 32
-			,@TestId int = 11
-			,@UserId int = 8
-			,@StatusId int = 1
+		,@TestId int = 11
+		,@UserId int = 8
+		,@StatusId int = 1
 
 	SELECT	Id
-			,TestId
-			,UserId
-			,DateCreated
-			,DateModified
-			,StatusId
-	FROM	dbo.TestInstances
-	WHERE	Id = @Id
+		,TestId
+		,UserId
+		,DateCreated
+		,DateModified
+		,StatusId
+	FROM	
+	 	dbo.TestInstances
+	WHERE	
+	 	Id = @Id
 
-	EXECUTE dbo.TestInstances_Update
+	EXECUTE 
+	 	dbo.TestInstances_Update
 			@Id
 			,@TestId
 			,@UserId
@@ -53,21 +55,27 @@ as
 			,DateCreated
 			,DateModified
 			,StatusId
-	FROM	dbo.TestInstances
-	WHERE	Id = @Id
+	FROM	
+	 	dbo.TestInstances
+	WHERE	
+	 	Id = @Id
 
 */
 
 BEGIN
 
-	DECLARE @DateNow datetime2(7) = GETUTCDATE()
+	DECLARE 
+	 	@DateNow datetime2(7) = GETUTCDATE()
 
-	UPDATE	[dbo].[TestInstances]
-	SET		[TestId] = @TestId
-			,[UserId] = @UserId
-			,[DateModified] = @DateNow
-			,[StatusId] = @StatusId
-	WHERE	Id = @Id
+	UPDATE	
+	 	[dbo].[TestInstances]
+	SET		
+	 	[TestId] = @TestId
+		,[UserId] = @UserId
+		,[DateModified] = @DateNow
+		,[StatusId] = @StatusId
+	WHERE	
+	 	Id = @Id
 
 END
 
